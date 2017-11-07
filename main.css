@@ -1,0 +1,563 @@
+body{
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  z-index: 0;
+  overflow-x: hidden;
+}
+a{
+  min-width: 48px;
+  min-height: 48px;
+}
+nav{
+  z-index: 100;
+  position: fixed;
+  background: rgb(53, 86, 187);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+nav a{
+  color: white;
+}
+.menu{
+  display: block;
+  transition: max-height ease 0.4s;
+}
+.menuItem{
+  padding: 1.5em;
+  cursor: pointer;
+  transition: max-height ease 0.4s;
+}
+.menuItem:hover{
+  background: cornflowerblue;
+}
+@media screen and (max-width:700px) {
+  /*ketika sembunyi*/
+  #sembunyi{
+    max-height: 0;
+  }
+  #sembunyi .menuItem{
+    max-height: 0;
+    cursor: default;
+  }
+  #sembunyi .menuItem:hover{
+    background: none;
+  }
+  #sembunyi a{
+    font-size: 0;
+  }
+  /*ketika muncul*/
+  #muncul{
+    max-height: auto;
+  }
+  #muncul .menuItem{
+    max-height: 3em;
+  }
+  #muncul a{
+    font-size: 1em;
+  }
+}
+.Handler{
+  height: 10vh;
+  background: #2e4fb3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Handler div{
+  display: flex;
+  color: white;
+}
+.Handler img{
+  height: 9vh;
+  width: 9vh;
+  margin: 0 1em;
+}
+nav a{
+  text-decoration: none;
+}
+.bgBesar{
+  position: absolute;
+  z-index: -1;
+  background-color: royalblue;
+  background-size:cover;
+  width: 100%;
+  height: 80vh;
+  margin: 0;
+  padding: 0;
+}
+.bgBesar div{
+  display: block;
+  width: inherit;
+  height: inherit;
+  background: rgba(0, 0, 0, 0.5);
+}
+main{
+  padding-top: 10vh;
+}
+main.tanpa-nav{
+  padding-top: 0;
+}
+.jumbotron{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.baris{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+.view{
+  margin: 1em;
+  /*margin: auto;*/
+  width: 210px;
+  height: 210px;
+  background: cornflowerblue;
+  background-size: cover !important;
+}
+.view div{
+  /*margin: 1em;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: transparent;
+  width: inherit;
+  height: inherit;
+  background-color: transparent;
+}
+.view div:hover{
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 4em rgba(0, 0, 0, 0.9);
+}
+.tombol{
+  font-size: medium;
+  margin: 0 auto;
+  padding: 0 .5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  max-width: 100px;
+  min-height: 40px;
+  border-radius: 5px;
+  color: white;
+  background-color: #1cad63;
+  text-decoration: none;
+  border: solid 1px transparent;
+  cursor: pointer;
+}
+.tombol:hover{
+  color: #1cad63;
+  border: solid 1px #1cad63;
+  background-color: transparent;
+}
+.tombol.negatif{
+  background-color: red;
+}
+.tombol.negatif:hover{
+  color: red;
+  border: solid 1px red;
+  background-color: transparent;
+}
+.kolom{
+  margin: .5%;
+  padding: 1em 0;
+}
+.kolom.satu{
+  width: 99%;
+}
+.kolom.dua{
+  width: 49%;
+}
+.kolom.empat{
+  width: 24%;
+}
+footer{
+  background: #111;
+  color: lightgray;
+  text-align: center;
+  padding-top: 2em;
+}
+footer .baris{
+  display: flex;
+  justify-content: space-around;
+}
+.kolom.sosmed{
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+footer img{
+  height: 80px;
+}
+form{
+  background: white;
+}
+.inputan{
+  display: flex;
+  flex-direction: column;
+  margin: .5em 1em;
+  text-align: justify;
+}
+.inputan.jejer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#teksField{
+  border: none;
+  border-bottom: 1px solid royalblue;
+  padding: .5em;
+  margin-bottom: 2em;
+}
+#teksField input[type="text"]{
+  border: none;
+  width: 80%;
+  height: 100%;
+}
+#teksArea{
+  border: none;
+  border: 1px solid royalblue;
+  padding: .5em;
+  margin-bottom: 2em;
+}
+#teksArea textarea{
+  border: none;
+  width: 100%;
+}
+.dropdown{
+  padding: .5em;
+  margin-bottom: 2em;
+  background: white;
+  border: none;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+}
+.kartu{
+  background: white;
+  padding: 0;
+}
+table {
+  border-spacing: 0;
+  background: gainsboro;
+  text-align: left;
+}
+tr.kepala{
+  background: cadetblue;
+}
+tr.kepala:hover{
+  background: cadetblue;
+}
+tr:hover{
+  background: #efe9e9;
+}
+td{
+  padding: .5em;
+}
+.scroll-horizontal{
+  width: inherit;
+  overflow-x: scroll;
+}
+.kartu div {
+  padding: .5em;
+  min-width: 200px;
+  text-align: justify;
+}
+.nama {
+  color: grey;
+}
+.tanggal{
+  display: flex;
+  justify-content: flex-end;
+  color: grey;
+}
+.no{
+  background: burlywood;
+}
+@media screen and (max-width:765px){
+  .view{
+    width: 100%;
+    margin: 0;
+  }
+  .view div{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 4em rgba(0, 0, 0, 0.9);
+  }
+  footer .baris{
+    display: block;
+  }
+  .kolom{
+    margin: .25em 0;
+    padding: 1em;
+    width: 100% !important;
+  }
+  .kolom.sosmed{
+    text-align: left;
+    display: block;
+    margin: 0 .5em;
+    padding: .25em;
+  }
+  /*.kartu{
+    padding: 0;
+  }*/
+  footer img{
+    height: 2em;
+  }
+}
+@media screen and (min-width:700px) {
+  .Handler{
+    display: none;
+  }
+  nav{
+    height: 10vh;
+  }
+  .menu{
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    width: inherit;
+    height: auto !important;
+  }
+  nav.admin{
+    display: block;
+    width: 135px;
+    height: 100vh;
+  }
+  .menu.admin{
+    display: block;
+  }
+  main.admin{
+    padding-top: 0;
+    margin-left: 135px;
+  }
+  footer.admin{
+    margin-left: 135px;
+  }
+  .menu a{
+    font-size: 1em !important;
+  }
+  form{
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  }
+  .kartu.kolom{
+    padding: 1em;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  }
+  .inputan{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #teksField{
+    min-width: 60%;
+    border: none;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+  }
+  #teksArea{
+    border: none;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+  }
+  .dropdown{
+    min-width: 60%;
+    border: none;
+    background: white;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.5);
+  }
+}
+article {
+    display: flex;
+    margin: auto 2em;
+    text-align: justify;
+}
+article h1 {
+    margin: .25em 0;
+}
+.floating.bungkus{
+  position:fixed;
+  right: 0;
+  bottom: 0;
+}
+@media screen and (max-width:400px) {
+  .floating.bungkus{
+    right: 2em;
+    bottom: 4em;
+  }
+}
+.floating.isi{
+  font-size: 3em;
+  color: white;
+  display: flex;
+  margin: 10px;
+  background: green;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px black;
+  opacity: .4;
+  text-decoration: none;
+}
+.floating.isi:hover{
+  opacity: 1;
+}
+
+@media screen and (max-width:700px){
+  .judul{
+    display: none;
+  }
+  .jumbotron{
+    display: none;
+  }
+  .kolom.dua .la-ball-grid-pulse.la-2x{
+    width: 111px;
+  }
+}
+#hamburgerMenu{
+  font-size: 2em;
+  margin: .5em;
+  color: aliceblue;
+}
+@media screen and (max-width:765px){
+  .bgBesar div{
+    background-color: transparent;
+  }
+  .baris h1{
+    color: aliceblue;
+    padding-left: 1em;
+  }
+}
+@media screen and (min-width:765px){
+  .bgBesar{
+    background: url("img/bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+  }
+  main.admin .bgBesar{
+    background: url("img/bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+  }
+  .baris h1{
+    color: white;
+    padding-left: 1em;
+  }
+  #catatan{
+      max-width: 49%;
+  }
+  #selected{
+    background: cornflowerblue;
+  }
+}
+#jumbotron80{
+  height: 40vh;
+  color: white;
+}
+.judul {
+  width: 144px;
+  margin: auto;
+}
+.judul h1, .judul h2{
+  margin-bottom: 0;
+  margin-top: 0;
+  border: solid 8px;
+  padding: 1em 0
+}
+.judul span{
+  display: flex;
+  justify-content: space-between;
+}
+.kolom.satu{
+  text-align: center;
+}
+#tickets{
+  background: lightblue;
+}
+.kolom h1{
+  color: black;
+}
+#fasilitas{
+  margin: 0;
+  overflow-y: scroll;
+  max-height: 5.5em;
+}
+#destination {
+  justify-content: space-between;
+}
+#destination h2{
+  color: #dbe3fb;
+  padding: 0 1em;
+}
+/*==========================================
+       dari web uniform himatika 2017
+  ==========================================*/
+   .bungkusLaporan{
+     display: block;
+     text-align: justify;
+     padding: 0 1em;
+   }
+   .bungkusLaporan h1{
+     text-align: left;
+     color: grey;
+     font-weight: bolder;
+     margin-bottom: 0;
+   }
+   .bungkusLaporan div{
+     padding: 1em;
+     border-radius: 3px;
+     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+   }
+   .bungkusLaporan ul{
+     margin: 0;
+     padding-left: 1em;
+   }
+   .cp{
+     text-align: left;
+     width: 20em;
+     margin: .5em;
+   }
+ /*=======================================*/
+@media screen and (max-width:700px){
+  .cp{
+    width: auto;
+  }
+  .bungkusLaporan ul{
+    width: 80%;
+  }
+}
+#catatan {
+  background: palegoldenrod;
+}
+.rata-tengah{
+  text-align: center !important;
+}
+.rata-kiri{
+  text-align: left !important;
+}
+.rata-kanan{
+  text-align: right !important;
+}
+.rata-kanan-kiri{
+  text-align: justify !important;
+}
+.author{
+  font-size: 10pt;
+  background: #ddd;
+  padding: .25em .5em;
+  color: #333;
+  border-radius: 3px;
+}
